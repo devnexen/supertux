@@ -56,9 +56,7 @@ Platform::Platform(const ReaderMapping& reader) :
 void
 Platform::save(Writer& writer) {
   MovingSprite::save(writer);
-  if (!automatic) {
-    writer.write("running", true);
-  }
+  writer.write("running", walker->is_moving());
   path->save(writer);
 }
 
