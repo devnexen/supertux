@@ -135,10 +135,11 @@ EditorLevelsetSelectMenu::EditorLevelsetSelectMenu() :
 
 EditorLevelsetSelectMenu::~EditorLevelsetSelectMenu()
 {
-  if (!Editor::current()->levelloaded && !Editor::current()->reload_request) {
-    Editor::current()->quit_request = true;
+  auto editor = Editor::current();
+  if (!editor->levelloaded && !editor->reload_request) {
+    editor->quit_request = true;
   } else {
-    Editor::current()->reactivate_request = true;
+    editor->reactivate_request = true;
   }
 }
 
