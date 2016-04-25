@@ -90,6 +90,8 @@ Path::read(const ReaderMapping& reader)
 
 void
 Path::save(Writer& writer) {
+  if (!is_valid()) return;
+
   writer.start_list("path");
 
   switch (mode) {
