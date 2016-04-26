@@ -23,6 +23,7 @@
 
 #include "math/vector.hpp"
 
+class ObjectOption;
 class ReaderMapping;
 class Writer;
 
@@ -91,6 +92,11 @@ public:
   };
 
   WalkMode mode;
+
+  /**
+   * Returns an object option that modifies the mode.
+   */
+  static ObjectOption get_mode_option(WalkMode* mode_);
 };
 
 #endif
